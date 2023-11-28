@@ -10,15 +10,15 @@ def mostrar_tabla():
     url_api = 'URL_DE_LA_API_AQUI'
     response = requests.get(url_api)
     
-     # Verificar si la solicitud fue exitosa
+    # Verificar si la solicitud fue exitosa
     if response.status_code == 200:
         # Convertir la respuesta de XML a JSON
         dict_data = xmltodict.parse(response.text)
         json_data = json.dumps(dict_data, indent=2)
+
         # Renderizar la tabla HTML con Jinja2
-        tabla_html = render_template_string(''' 
-                                            
-                                            <html>
+        tabla_html = render_template_string('''
+            <html>
             <head>
                 <style>
                     table {
@@ -40,11 +40,11 @@ def mostrar_tabla():
                 <table>
                     <thead>
                         <tr>
-                        {% for key in data.keys() %}
+                            {% for key in data.keys() %}
                                 <th>{{ key }}</th>
                             {% endfor %}
                         </tr>
-                        </thead>
+                    </thead>
                     <tbody>
                         <tr>
                             {% for value in data.values() %}
@@ -52,15 +52,15 @@ def mostrar_tabla():
                             {% endfor %}
                         </tr>
                     </tbody>
-                    </table>
+                </table>
             </body>
             </html>
-                                            
-                                            
-                                            ''', data=dict_data
-                                            return tabla_html
-                                            else:
-        return f'Error al hacer la solicitud a la API. Código de estado: {response.status_code}')
-    
+        ''', data=dict_data)
+
+        return tabla_html
+
+    else:
+        return f'Error al hacer la solicitud a la API. Código de estado: {response.status_code}'
+
 if __name__ == '__main__':
     app.run(debug=True)
