@@ -35,6 +35,11 @@ def mostrar_tabla():
                     }
                 </style>
             </head>
+            <body>
+                <h2>Tabla de Datos</h2>
+                <table>
+                    <thead>
+                        <tr>
                                             
                                             
                                             ''')
