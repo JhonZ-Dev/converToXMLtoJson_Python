@@ -15,3 +15,5 @@ def mostrar_tabla():
         # Convertir la respuesta de XML a JSON
         dict_data = xmltodict.parse(response.text)
         json_data = json.dumps(dict_data, indent=2)
+        # Renderizar la tabla HTML con Jinja2
+        tabla_html = render_template_string
