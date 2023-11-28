@@ -52,6 +52,9 @@ def mostrar_tabla():
                             {% endfor %}
                         </tr>
                     </tbody>
+                    </table>
+            </body>
+            </html>
                                             
                                             
                                             ''')
