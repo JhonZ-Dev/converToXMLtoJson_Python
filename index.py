@@ -12,3 +12,6 @@ def mostrar_tabla():
     
      # Verificar si la solicitud fue exitosa
     if response.status_code == 200:
+        # Convertir la respuesta de XML a JSON
+        dict_data = xmltodict.parse(response.text)
+        json_data = json.dumps(dict_data, indent=2)
