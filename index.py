@@ -40,6 +40,10 @@ def mostrar_tabla():
                 <table>
                     <thead>
                         <tr>
+                        {% for key in data.keys() %}
+                                <th>{{ key }}</th>
+                            {% endfor %}
+                        </tr>
                                             
                                             
                                             ''')
