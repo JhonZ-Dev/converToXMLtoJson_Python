@@ -9,3 +9,6 @@ def mostrar_tabla():
     # Hacer una solicitud a la API
     url_api = 'URL_DE_LA_API_AQUI'
     response = requests.get(url_api)
+    
+     # Verificar si la solicitud fue exitosa
+    if response.status_code == 200:
