@@ -44,6 +44,14 @@ def mostrar_tabla():
                                 <th>{{ key }}</th>
                             {% endfor %}
                         </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            {% for value in data.values() %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
                                             
                                             
                                             ''')
