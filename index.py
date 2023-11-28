@@ -18,7 +18,23 @@ def mostrar_tabla():
         # Renderizar la tabla HTML con Jinja2
         tabla_html = render_template_string(''' 
                                             
-                                            
+                                            <html>
+            <head>
+                <style>
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    th, td {
+                        border: 1px solid #dddddd;
+                        text-align: left;
+                        padding: 8px;
+                    }
+                    th {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+            </head>
                                             
                                             
                                             ''')
