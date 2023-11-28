@@ -57,4 +57,4 @@ def mostrar_tabla():
             </html>
                                             
                                             
-                                            ''')
+                                            ''', data=dict_data)
